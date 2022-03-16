@@ -399,36 +399,46 @@ opacity: 0.6;
   justify-content: center;
 }
 
-.item-row .checkout-item-column:first-child{
+.item-row .checkout-item-column:first-child {
   background-color: var(--main-color-2);
   border-radius: 0 0 16px 0;
   color: white;
 }
 
-.item-row .checkout-item-column:nth-child(2){
+.item-row .checkout-item-column:nth-child(2) {
   color: var(--main-color-10);
   justify-content: start;
   padding: 0 0 0 10px;
 }
 
-.item-row .checkout-item-column:nth-child(3){
+.item-row .checkout-item-column:nth-child(3) {
   background-color: rgba(166, 109, 5, 0.6);
 }
 
-.item-row .checkout-item-column:nth-child(4){
+.item-row .checkout-item-column:nth-child(4) {
   background-color: rgba(166, 109, 5, 0.3);
 }
 
-.item-row .checkout-item-column:nth-child(5){
+.item-row .checkout-item-column:nth-child(5) {
   background-color: rgba(166, 109, 5, 0.6);
 }
 
-.item-row .checkout-item-column:nth-child(6){
+.item-row .checkout-item-column:nth-child(6) {
   background-color: var(--main-color-11);
   border-radius: 0 0 16px 0;
 }
 
-.item-row .checkout-item-column:nth-child(6):hover{
+.item-row .checkout-item-column:nth-child(6):hover {
+  transition: 0.5s;
+  opacity: 0.8;
+}
+
+.adm-delete {
+  background-color: var(--main-color-11) !important;
+  border-radius: 0 0 16px 0;
+}
+
+.adm-delete:hover {
   transition: 0.5s;
   opacity: 0.8;
 }
@@ -445,6 +455,14 @@ opacity: 0.6;
   border: none;
   height: 100%;
   width: 100%;
+}
+
+.admin-email {
+  width: 450px;
+}
+
+.admin-role {
+  width: 125px;
 }
 
 .item-row.total {

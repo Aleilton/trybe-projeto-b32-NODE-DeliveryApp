@@ -8,13 +8,13 @@ import logoutImg from '../images/logout.png';
 import myProducts from '../images/my-products.png';
 import productsSelImg from '../images/products-sel.png';
 import user from '../images/user.png';
+import usersSelImg from '../images/users-sel.png';
 
 const Nav = ({ totalCart, userLogged, renderCart }) => {
   const history = useHistory();
 
   function logout() {
     localStorage.clear();
-    // setInfoUsuario(null);
     history.push('/login');
   }
 
@@ -36,8 +36,24 @@ const Nav = ({ totalCart, userLogged, renderCart }) => {
     );
   }
 
-  return (
-    <main className="nav-body">
+  function renderNavBodyLeftAdmin() {
+    return (
+      <div className="nav-body-left">
+        <button
+          type="button"
+          className="nav-body-button selected"
+          onClick={ () => history.push('/admin/manage') }
+          data-testid="customer_products__element-navbar-link-products"
+        >
+          <img src={ usersSelImg } alt="Ícone de usuários" />
+          Gerenciar Usuários
+        </button>
+      </div>
+    );
+  }
+
+  function renderNavBodyLeftOther() {
+    return (
       <div className="nav-body-left">
         <button
           type="button"
@@ -58,6 +74,14 @@ const Nav = ({ totalCart, userLogged, renderCart }) => {
           Meus Pedidos
         </button>
       </div>
+    );
+  }
+
+  return (
+    <main className="nav-body">
+      { userLogged.role === 'administrator'
+        ? renderNavBodyLeftAdmin()
+        : renderNavBodyLeftOther() }
       <div>
         <img src={ logoHorizontal } alt="Logo Dona Tereza" />
       </div>

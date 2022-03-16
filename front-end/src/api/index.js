@@ -1,12 +1,19 @@
 import axios from 'axios';
 
 const URL = 'http://localhost:3001';
+// const URL = 'http://192.168.1.76:3001';
 
 export const fetchAllProducts = (token) => axios.get(`${URL}/products`,
   { headers: { authorization: `${token}` } });
 
+export const getUsers = (token) => axios.get(`${URL}/users`,
+  { headers: { authorization: `${token}` } });
+
 export const createUser = (user) => axios.post(`${URL}/users`, user)
   .catch((error) => error.response);
+
+export const deleteUser = (id, token) => axios
+  .delete(`${URL}/users/${id}`, { headers: { authorization: `${token}` } });
 
 export const adminCreateUser = (user, token) => axios.post(`${URL}/users/admin/create`,
   user,
@@ -39,7 +46,3 @@ export const fetchSaleById = (id, token) => axios.get(`${URL}/sales/${id}`, { he
 export const updateStatusSale = (id, status, token) => axios
   .put(`${URL}/sales/${id}/status`, null,
     { params: { status }, headers: { authorization: token } });
-
-// export const updateStatusSale = (id, status, token) => axios
-//   .put(`${URL}/sales/${id}`,
-//     { params: { status }, headers: { authorization: `${token}` } });
