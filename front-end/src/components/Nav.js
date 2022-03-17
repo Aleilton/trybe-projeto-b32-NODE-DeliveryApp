@@ -6,6 +6,7 @@ import logoHorizontal from '../images/logo-horizontal.png';
 import cart from '../images/cart.png';
 import logoutImg from '../images/logout.png';
 import myProducts from '../images/my-products.png';
+import myProductsSel from '../images/my-products-sel.png';
 import productsSelImg from '../images/products-sel.png';
 import user from '../images/user.png';
 import usersSelImg from '../images/users-sel.png';
@@ -52,7 +53,23 @@ const Nav = ({ totalCart, userLogged, renderCart }) => {
     );
   }
 
-  function renderNavBodyLeftOther() {
+  function renderProductsSeller() {
+    return (
+      <div className="nav-body-left">
+        <button
+          type="button"
+          className="nav-body-button selected"
+          onClick={ () => history.push('/seller/orders') }
+          data-testid="seller_products__element-navbar-link-orders"
+        >
+          <img src={ myProductsSel } alt="Ícone de produtos" />
+          Pedidos
+        </button>
+      </div>
+    );
+  }
+
+  function renderNavBodyLeftCustomer() {
     return (
       <div className="nav-body-left">
         <button
@@ -79,9 +96,9 @@ const Nav = ({ totalCart, userLogged, renderCart }) => {
 
   return (
     <main className="nav-body">
-      { userLogged.role === 'administrator'
-        ? renderNavBodyLeftAdmin()
-        : renderNavBodyLeftOther() }
+      { userLogged.role === 'administrator' && renderNavBodyLeftAdmin() }
+      { userLogged.role === 'customer' && renderNavBodyLeftCustomer() }
+      { userLogged.role === 'seller' && renderProductsSeller() }
       <div>
         <img src={ logoHorizontal } alt="Logo Dona Tereza" />
       </div>

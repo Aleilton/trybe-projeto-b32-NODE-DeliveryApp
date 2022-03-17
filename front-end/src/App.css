@@ -35,9 +35,9 @@
 
 body {
   background-image: url('./images/bg-quadro.jpg');
-  background-position: center center;
+  background-position: center top;
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: cover;
   font-family: 'PT Sans', sans-serif;
   min-height: 100vh;
 }
@@ -623,4 +623,103 @@ opacity: 0.6;
   letter-spacing: 0.03em;
   height: 100%;
   width: 100%;
+}
+
+.order-card {
+  border: solid 1px rgb(188, 188, 188);
+  border-radius: 0 0 16px 0;
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
+  margin: 15px;
+  padding: 0;
+  width: 300px;
+}
+
+.order-card:hover {
+  transition: 0.5s;
+  opacity: 0.6;
+}
+
+.order-card button {
+  background-color: white;
+  border: none;
+  border-radius: 0 0 16px 0;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+
+.order-card-id {
+  align-items: center;
+  font-family: 'PT Sans', sans-serif;
+  font-weight: bold;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  min-height: 80px;
+  padding: 0;
+  width: 60px;
+}
+
+.order-card-body {
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 2;
+  border-radius: 0 0 16px 0;
+}
+
+.order-card-address {
+  background-color: var(--main-color-8);
+  font-family: 'PT Sans', sans-serif;
+  padding: 3px 0;
+}
+
+.order-card-container {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 2;
+  border-radius: 0 0 16px 0;
+}
+
+.order-card-container h5 {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-grow: 4;
+  font-size: 18px;
+  letter-spacing: 0.03em;
+}
+
+.order-card-container div {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.order-card-container div p {
+  font-weight: bold;
+  padding: 5px 0;
+}
+
+.pending {
+  background-color: var(--main-color-3);
+  color: var(--main-color-2);
+}
+
+.preparing {
+  background-color: var(--main-color-5);
+  color: var(--main-color-8);
+}
+
+.transit {
+  background-color: var(--main-color-10);
+  color: var(--main-color-8);
+}
+
+.delivered {
+  background-color: var(--main-color-6);
+  color: var(--main-color-8);
 }
