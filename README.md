@@ -8,6 +8,8 @@ Para visualizar a versão demonstração acesse:
 
 [Demonstração](https://aleilton-delivery.netlify.app/)
 
+![Demonstração](./assets/readme/delivery.JPG)
+
 ---
 
 # Sumário
