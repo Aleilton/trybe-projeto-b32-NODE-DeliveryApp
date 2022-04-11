@@ -2,6 +2,12 @@
 
 Projeto desenvolvido no Bloco 32 do curso de Desenvolvimento Web, na conclusão do Módulo de Back-End.
 
+# Demonstração
+
+Para visualizar a versão demonstração acesse:
+
+[Demonstração](https://aleilton-delivery.netlify.app/)
+
 ---
 
 # Sumário
